@@ -44,10 +44,11 @@ public class WiseSayingRepository {
         return wiseSayings.removeIf((wiseSaying) -> wiseSaying.getId() == id);
     }
 
-    public WiseSaying save(String content, String author) {
-        WiseSaying wiseSaying = new WiseSaying(++lastId, content, author);
-        wiseSayings.add(wiseSaying);
-
+    public WiseSaying save(WiseSaying wiseSaying) {
+        if(wiseSaying.getId() == 0){
+            wiseSaying.setId(++lastId);
+            wiseSayings.add(wiseSaying);
+        }
         return wiseSaying;
     }
 }
