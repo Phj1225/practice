@@ -1,4 +1,4 @@
-package com.back;
+package com.domain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +11,7 @@ public class App {
     private int lastId = 0;
 
     private List<WiseSaying> wiseSayings = new ArrayList<>();
-
+    private SystemController systemController = new SystemController();
     public void run() {
 
         System.out.println("== 명언 앱 ==");
@@ -24,7 +24,7 @@ public class App {
             String action = rq.getAction();
 
             if (action.equals("종료")) {
-                break;
+                systemController.exit();
             } else if (action.equals("등록")) {
                 actionWrite();
             } else if (action.equals("목록")) {
