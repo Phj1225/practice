@@ -1,20 +1,22 @@
 package com.domain.wiseSaying.controller;
 
 import com.domain.Rq;
-import com.domain.systemcontroller.SystemController;
 import com.domain.wiseSaying.entity.WiseSaying;
+import com.domain.wiseSaying.service.WiseSayingService;
+
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
+
 public class WiseSayingController {
     private Scanner sc = new Scanner(System.in);
     private int lastId = 0;
 
     private List<WiseSaying> wiseSayings = new ArrayList<>();
-    private SystemController systemController = new SystemController();
+    private WiseSayingService wiseSayingService = new WiseSayingService();
 
 
     //등록
