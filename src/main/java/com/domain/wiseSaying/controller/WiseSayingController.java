@@ -1,6 +1,7 @@
 package com.domain.wiseSaying.controller;
 
-import com.domain.Rq;
+import com.domain.global.Rq;
+import com.domain.global.AppContext;
 import com.domain.wiseSaying.entity.WiseSaying;
 import com.domain.wiseSaying.service.WiseSayingService;
 
@@ -12,7 +13,7 @@ import java.util.Scanner;
 
 public class WiseSayingController {
     private Scanner sc = new Scanner(System.in);
-    private WiseSayingService wiseSayingService = new WiseSayingService();
+    private WiseSayingService wiseSayingService = AppContext.wiseSayingService;
 
 
     //등록

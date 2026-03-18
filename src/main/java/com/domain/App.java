@@ -1,19 +1,17 @@
 package com.domain;
 
+import com.domain.global.Rq;
+import com.domain.global.AppContext;
 import com.domain.systemcontroller.SystemController;
 import com.domain.wiseSaying.controller.WiseSayingController;
-import com.domain.wiseSaying.entity.WiseSaying;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.stream.IntStream;
+
 
 public class App {
     private Scanner sc = new Scanner(System.in);
-    private SystemController systemController = new SystemController();
-    private WiseSayingController wiseSayingController = new WiseSayingController();
-
+    private SystemController systemController = AppContext.systemController;
+    private WiseSayingController wiseSayingController= AppContext.wiseSayingController;
     public void run() {
         System.out.println("== 명언 앱 ==");
 

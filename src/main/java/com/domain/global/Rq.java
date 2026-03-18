@@ -1,4 +1,4 @@
-package com.domain;
+package com.domain.global;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Arrays;

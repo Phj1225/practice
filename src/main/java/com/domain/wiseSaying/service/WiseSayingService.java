@@ -1,12 +1,14 @@
 package com.domain.wiseSaying.service;
 
+import com.domain.App;
+import com.domain.global.AppContext;
 import com.domain.wiseSaying.entity.WiseSaying;
 
 import com.domain.wiseSaying.Repository.WiseSayingRepository;
 import java.util.List;
 
 public class WiseSayingService {
-    WiseSayingRepository wiseSayingRepository = new WiseSayingRepository();
+    WiseSayingRepository wiseSayingRepository = AppContext.wiseSayingRepository;
 
     public WiseSaying findById(int id) {
 
