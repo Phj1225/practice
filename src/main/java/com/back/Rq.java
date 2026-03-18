@@ -1,6 +1,8 @@
 package com.back;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class Rq {
 
@@ -15,13 +17,14 @@ public class Rq {
         String params = cmdBits.length > 1 ? cmdBits[1] : "";
 
         String[] paramsBits = params.split("&");
-        for(String param : paramsBits) {
-            String[] paramBits = param.split("=");
-            String key = paramBits[0];
-            String value = paramBits.length > 1 ? paramBits[1] : "";
-
-            paramMap.put(key, value);
-        }
+        paramMap = Arrays.stream(paramsBits)
+                .map((param)->param.split("="))
+                .filter((paramBits)->paramBits.length ==2
+                        &&paramBits[0]!=null && paramBits[1] !=null )
+                .collect(Collectors.toMap(
+                        bits ->bits[0],
+                        bits -> bits[1]
+                ));
     }
 
     public String getAction() {
