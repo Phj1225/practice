@@ -1,9 +1,14 @@
 package com.domain.wiseSaying.entity;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 public class WiseSaying {
 
     private int id;
     private String author;
     private String content;
+    private  LocalDateTime createDate;
+    private  LocalDateTime modifyDate;
 
     public WiseSaying(int id, String content, String author) {
         this.id = id;
@@ -33,5 +38,21 @@ public class WiseSaying {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public  LocalDateTime getCreateDate(){
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDateTime createDate){
+        this.createDate = createDate;
+    }
+
+    public   LocalDateTime getModifyDate(){
+        return modifyDate;
+    }
+
+    public void setModifyDate(LocalDateTime modifyDate) {
+        this.modifyDate = modifyDate;
     }
 }

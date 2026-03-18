@@ -2,6 +2,7 @@ package com.domain.wiseSaying.Repository;
 
 import com.domain.wiseSaying.entity.WiseSaying;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -48,6 +49,12 @@ public class WiseSayingRepository {
         if(wiseSaying.getId() == 0){
             wiseSaying.setId(++lastId);
             wiseSayings.add(wiseSaying);
+
+            wiseSaying.setCreateDate(LocalDateTime.now());
+            wiseSaying.setModifyDate(LocalDateTime.now());
+        }
+        else{
+            wiseSaying.setModifyDate(LocalDateTime.now());
         }
         return wiseSaying;
     }
